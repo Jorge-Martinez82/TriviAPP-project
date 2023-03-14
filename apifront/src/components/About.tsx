@@ -7,7 +7,13 @@ const About = () => {
 
         <div className="about">
             <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, autem.</p>
+                <p>Frontend: React.js</p>
+                <p>Backend: Java Spring Boot</p>
+                <p>DataBase: PostgreSQL</p>
+                <br/>
+                <p>Author: Jorge Martinez</p>
+                <p>Version: 1.0</p>
+
             </div>
         </div>
     );

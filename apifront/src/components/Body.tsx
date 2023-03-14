@@ -27,7 +27,6 @@ const Body = () => {
             headers: {'Content-Type': 'application/json'},
             body : JSON.stringify(questions)
         })
-        console.log(questions)
     }
 
     useEffect(() => {
