@@ -20,7 +20,6 @@ const Header = () => {
                     <li>
                         <Link to="/mytriviapp">MyTriviAPP</Link>
                     </li>
-                    <hr/>
                 </nav>
             </div>
 
