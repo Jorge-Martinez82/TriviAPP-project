@@ -17,6 +17,9 @@ const Header = () => {
                     <li>
                         <Link to="/Body">TriviAPP</Link>
                     </li>
+                    <li>
+                        <Link to="/mytriviapp">MyTriviAPP</Link>
+                    </li>
                     <hr/>
                 </nav>
             </div>
