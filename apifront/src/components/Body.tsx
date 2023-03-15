@@ -20,7 +20,6 @@ const Body = () => {
                 setQuestions(data)
             )
     }
-
     const saveQuestion = () => {
         fetch('http://localhost:8080/api/questions/saved', {
             method : 'POST',
@@ -33,7 +32,6 @@ const Body = () => {
         getQuestions()
     }, []);
 
-
     function nextQuestion() {
         setShowAnswer(false)
         getQuestions()
@@ -42,7 +40,6 @@ const Body = () => {
     function selectCategory(event: any) {
         setCategory(event.target.value);
     }
-
 
     const answer = (e:any) => {
         e.preventDefault();

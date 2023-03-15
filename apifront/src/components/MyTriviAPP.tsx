@@ -6,7 +6,6 @@ const MyTriviAPP = () => {
     const [savedQuestions, setSavedQuestions] = useState<any>([]);
     const [editIndex, setEditIndex] = useState(null);
 
-
     const getSavedQuestions = () => {
         fetch('http://localhost:8080/api/questions/saved')
             .then((response) => response.json())
@@ -19,7 +18,6 @@ const MyTriviAPP = () => {
         fetch('http://localhost:8080/api/questions/saved?id=' + id, {method: 'DELETE'})
         getSavedQuestions()
     }
-
 
     useEffect(() => {
         getSavedQuestions()

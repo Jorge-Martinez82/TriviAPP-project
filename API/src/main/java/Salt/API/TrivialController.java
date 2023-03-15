@@ -13,10 +13,7 @@ public class TrivialController {
 
     @Autowired
     TrivialService service;
-    @GetMapping(path="{id}")
-    public Question test(@PathVariable Long id){
-        return service.findById(id);
-    }
+
     @GetMapping
     public QuestionDTO getQuestion(@RequestParam String category) throws IOException, InterruptedException {
         return service.getQuestion(category);}
