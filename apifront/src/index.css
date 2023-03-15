@@ -1,12 +1,9 @@
-body {
+html {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #b44d4d;
 
+  background: linear-gradient(180deg, #3E6A9E 27%, #9ADFEA 100%);
+  font-family: "Garamond";
+  height: 100%;
 }
 
 code {

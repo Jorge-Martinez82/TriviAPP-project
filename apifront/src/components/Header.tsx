@@ -6,10 +6,11 @@ const Header = () => {
     return (
         <div className="header">
             <div>
-                <nav>
-                    <h1>TriviAPP</h1>
+                <h1 className="title">&lt;/TriviAPP&gt;</h1>
+                <nav className="nav">
+
                     <li>
-                        <Link to="/">Home</Link>{" "}
+                        <Link className="link" to="/">Home</Link>{" "}
                     </li>
                     <li>
                         <Link to="/about">About</Link>

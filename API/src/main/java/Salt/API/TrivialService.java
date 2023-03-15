@@ -1,34 +1,23 @@
 package Salt.API;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
 import java.util.List;
-
-import static java.net.http.HttpRequest.BodyPublishers.noBody;
 
 @Service
 public class TrivialService {
     @Autowired
     ITrivialRepository repo;
-
     private final HttpClient client = HttpClient.newBuilder().build();
     private final ObjectMapper mapper = new ObjectMapper();
-
-
 
     public Question findById(Long id){
         return repo.getQuestionById(id);
@@ -58,11 +47,9 @@ public class TrivialService {
     public void saveQuestion(Question question) {
         repo.saveQuestion(question);
     }
-
     public List<Question> findAll() {
         return repo.getAll();
     }
-
     public void deleteById(Long id) {
         repo.deleteById(id);
     }

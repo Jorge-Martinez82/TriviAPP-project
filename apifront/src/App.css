@@ -6,52 +6,211 @@
     color: #61dafb;
 }
 
-.aboutcontent {
-    border-radius: 5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 3em;
-    padding-right: 3em;
-    background-color: #61dafb;
-    margin-top: 5em;
-    margin-left: 20em;
-    margin-right: 20em;
-    text-align: left;
+
+.mytriviapp__content {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }
 
-.body {
-    border-radius: 5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 3em;
-    padding-right: 3em;
-    background-color: #61dafb;
-    margin-top: 5em;
-    margin-left: 20em;
-    margin-right: 20em;
-    text-align: left;
-}
-
-.mytriviapp {
-    border-radius: 5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 3em;
-    padding-right: 3em;
-    background-color: #61dafb;
-    margin-top: 5em;
-    margin-left: 20em;
-    margin-right: 20em;
-    text-align: left;
-}
 
 .header{
     margin-left: 10em;
     margin-right: 10em;
     margin-top: 2em;
-    background-color: cornflowerblue;
-    padding: 1em;
-    border-radius: 5em;
+    background-color: #518bda;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px 10px #d76c6c;
+    height: 200px;
+}
+.title {
+    text-shadow: 4px 4px 1px #CE5937;
+    font-size: 5em;
+    font-family: "Brush Script MT";
+
 }
 
+.nav{
+    padding-right: 3em;
+    padding-left: 3em;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-bottom: 1em;
+    margin-top: -2em;
+    font-family: "Arial";
+}
+
+a{
+    font-size: xx-large;
+    text-decoration: none;
+}
+a:hover {
+    background: linear-gradient(to bottom, #d76c6c 5%, #b44d4d 100%);
+    background-color: #a44646;
+    border-radius: 10px;
+}
+li{
+    background-color: #EAA19A;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 0px 0px 5px #943E3E;
+    font-size: x-large;
+
+}
+
+.body{
+    width: 80%;
+    font-size: 2.5em;
+    border-radius: 30px;
+    background-color: #8bdbff;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0px 0px 0px 5px #2dceff;
+}
+
+
+.body__button {
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    background-color:#7892c2;
+    border-radius:10px;
+    border:1px solid #4e6096;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:19px;
+    padding:5px 30px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+}
+.body__button:hover {
+    background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color:#476e9e;
+}
+.body__button:active {
+    position:relative;
+    top:1px;
+}
+
+.div__button{
+    display: flex;
+    justify-content: space-around;
+}
+
+.aboutcontent{
+    width: 80%;
+    border-radius: 30px;
+    background-color: #8bdbff;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0px 0px 0px 5px #2dceff;
+}
+
+.mytriviapp{
+    width: 80%;
+    font-size: 1.5em;
+    border-radius: 30px;
+    background-color: #8bdbff;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow: 0px 0px 0px 5px #2dceff;
+}
+
+.mytriviapp__button{
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    background-color:#7892c2;
+    border-radius:10px;
+    border:1px solid #4e6096;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:19px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+}
+
+.remove__button{
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background:linear-gradient(to bottom, #d76c6c 5%, #b44d4d 100%);
+    background-color: #d76c6c;
+    border-radius:10px;
+    border:1px solid #4e6096;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:19px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+}
+.welcome{
+    font-size: 10em;
+}
+
+.select {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    width: 100%;
+}    .select select {
+         font-size: x-large;
+         text-align: center;
+         font-family: 'Arial';
+         display: inline-block;
+         width: 50%;
+         cursor: pointer;
+         padding: 12px 15px;
+         outline: 0;
+         border: 2px solid #000000;
+         border-radius: 24px;
+         background: #abe2e1;
+         color: #000000;
+         appearance: none;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+     }
+.select select::-ms-expand {
+    display: none;
+}
+.select select:hover,
+.select select:focus {
+    color: #000000;
+    background: #e6b8b8;
+}
+.select select:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+.select_arrow {
+    position: relative;
+    right: 35px;
+    width: 10px;
+    height: 10px;
+    border: solid #7b7b7b;
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+    border-color: #000000;
+}
+.select select:disabled ~ .select_arrow {
+    border-top-color: #cccccc;
+}
 

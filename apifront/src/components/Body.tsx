@@ -51,10 +51,10 @@ const Body = () => {
 
     return (
         <div className={"body"}>
-            <div>
-                <select className="selector" onChange={selectCategory}>
+            <div className="select">
+                <select  onChange={selectCategory}>
                     <option value="artliterature">Art/Literature</option>
-                    <option value="language">Languaje</option>
+                    <option value="language">Language</option>
                     <option value="sciencenature">Science/Nature</option>
                     <option value="general">General</option>
                     <option value="fooddrink">Food/Drink</option>
@@ -68,17 +68,19 @@ const Body = () => {
                     <option value="religionmythology">Religion/Mythology</option>
                     <option value="sportsleisure">Sports/Leisure</option>
                 </select>
+                <div className="select_arrow">
+                </div>
             </div>
             <div>
                 <p>{questions?.question}</p>
                 <div>
-                    <button onClick={answer}>Answer</button>
+                    <button className="body__button" onClick={answer}>Answer</button>
                     {showAnswer && <p>{questions?.answer}</p>}
                 </div>
             </div>
-            <div>
-                <button onClick={nextQuestion}>Next</button>
-                <button onClick={saveQuestion}>Save</button>
+            <div className="div__button">
+                <button className="body__button" onClick={nextQuestion}>Next</button>
+                <button className="body__button" onClick={saveQuestion}>Save</button>
             </div>
         </div>
     );

@@ -16,18 +16,14 @@ public class TrivialRepository implements ITrivialRepository{
         Optional<Question> quiz = dao.findById(id);
         return quiz.orElse(null);
     }
-
     @Override
     public void saveQuestion(Question question) {
         dao.save(question);
     }
-
     @Override
     public List<Question> getAll() {
         return (List<Question>) dao.findAll();
-
     }
-
     @Override
     public void deleteById(Long id) {
         dao.deleteById(id);
