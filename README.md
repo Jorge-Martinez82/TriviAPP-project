@@ -1,9 +1,10 @@
 # SaltAPIproject
 This application is a one-day project I made for presenting in the "Hack Day".
 We had one day to make the frontend, the backend and the database:
-   Frontend: React.js
-   Backend: Java Spring Boot
-   DataBase: PostgreSQL
+   - Frontend: React.js
+   - Backend: Java Spring Boot
+   - DataBase: PostgreSQL
+   - External API used https://api-ninjas.com/api/trivia
    
 It has the basic functionality of the design:
 ![app](https://user-images.githubusercontent.com/118907308/225281947-b3d32a6e-9303-4f74-8ac8-aa6bcd982463.png)
