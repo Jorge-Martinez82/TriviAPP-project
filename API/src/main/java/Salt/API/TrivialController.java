@@ -13,6 +13,7 @@ public class TrivialController {
 
     @Autowired
     TrivialService service;
+    //test
 
     @GetMapping
     public QuestionDTO getQuestion(@RequestParam String category) throws IOException, InterruptedException {
