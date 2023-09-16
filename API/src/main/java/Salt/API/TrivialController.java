@@ -1,7 +1,10 @@
 package Salt.API;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.io.IOException;
 import java.util.List;
@@ -11,23 +14,38 @@ import java.util.List;
 @RequestMapping("/api/questions/")
 public class TrivialController {
 
+    private final TrivialService service;
+
     @Autowired
-    TrivialService service;
-    //test
+    public TrivialController(TrivialService service) {
+        this.service = service;
+    }
 
     @GetMapping
-    public QuestionDTO getQuestion(@RequestParam String category) throws IOException, InterruptedException {
-        return service.getQuestion(category);}
-    @PostMapping(path = "saved")
-    public  void saveQuestion(@RequestBody Question question){
+    public ResponseEntity<QuestionDTO> getQuestion(@RequestParam(required = true) String category) {
+        try {
+            QuestionDTO question = service.getQuestion(category);
+            return ResponseEntity.ok(question);
+        } catch (IOException | InterruptedException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @PostMapping("saved")
+    public ResponseEntity<Void> saveQuestion(@RequestBody Question question) {
         service.saveQuestion(question);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-    @GetMapping(path = "saved")
-    public List<Question> getAllQuestions(){
-        return service.findAll();
+
+    @GetMapping("saved")
+    public ResponseEntity<List<Question>> getAllQuestions() {
+        List<Question> questions = service.findAll();
+        return ResponseEntity.ok(questions);
     }
-    @DeleteMapping(path = "saved")
-    public void deleteQuestion(@RequestParam Long id){
+
+    @DeleteMapping("saved/{id}")
+    public ResponseEntity<Void> deleteQuestion(@PathVariable Long id) {
         service.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
