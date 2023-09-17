@@ -3,10 +3,13 @@ import React, {useEffect, useState} from 'react'
 
 const Body = () => {
     const [category, setCategory] = useState("")
-
     const [questions, setQuestions] = useState({ question: '', answer: '' });
-
     const[showAnswer, setShowAnswer] = useState(false)
+    const [savingMessage, setSavingMessage] = useState('');
+    const [isSaving, setIsSaving] = useState(false);
+    const [saveButtonText, setSaveButtonText] = useState('Save');
+
+
     const getQuestions = () => {
         if(category)
         fetch('http://localhost:8090/api/questions/?category='+category,
@@ -22,12 +25,24 @@ const Body = () => {
             )
     }
     const saveQuestion = () => {
+        setIsSaving(true); // Desactivar el botón Save
+
         fetch('http://localhost:8090/api/questions/saved', {
-            method : 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body : JSON.stringify(questions)
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(questions),
         })
-    }
+            .then(() => {
+                // Guardado completado
+                setSavingMessage('Saving...'); // Mostrar el mensaje de guardado
+                setSaveButtonText('Saved');
+                setTimeout(() => {
+                    setSavingMessage(''); // Limpiar el mensaje después de unos segundos (opcional)
+                }, 2000); // Cambia 2000 a la cantidad de milisegundos que desees
+            })
+
+    };
+
 
     useEffect(() => {
         getQuestions()
@@ -82,7 +97,15 @@ const Body = () => {
             </div>
             <div className="div__button">
 
-                <button className="body__button" onClick={saveQuestion}>Save</button>
+                <button
+                    className="body__button"
+                    onClick={saveQuestion}
+                    disabled={isSaving} // Deshabilitar el botón cuando se esté guardando
+                >
+                    {saveButtonText}
+                </button>
+                {savingMessage && <p>{savingMessage}</p>} {/* Mostrar el mensaje de guardado */}
+
             </div>
         </div>
     );
