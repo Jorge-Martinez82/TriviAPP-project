@@ -3,11 +3,17 @@ import React, {useEffect, useState} from 'react'
 
 const MyTriviAPP = () => {
 
-    const [savedQuestions, setSavedQuestions] = useState<any>([]);
+    interface Question {
+        id: string;
+        question: string;
+        answer: string;
+    }
+
+    const [savedQuestions, setSavedQuestions] = useState<Question[]>([]);
     const [editIndex, setEditIndex] = useState(null);
 
     const getSavedQuestions = () => {
-        fetch('http://localhost:8080/api/questions/saved')
+        fetch('http://localhost:8090/api/questions/saved')
             .then((response) => response.json())
             .then((data) =>
                 setSavedQuestions(data)
@@ -15,9 +21,13 @@ const MyTriviAPP = () => {
     }
 
     const deleteSavedQuestion = (id: string) => {
-        fetch('http://localhost:8080/api/questions/saved?id=' + id, {method: 'DELETE'})
-        getSavedQuestions()
-    }
+        fetch('http://localhost:8090/api/questions/saved/' + id, {method: 'DELETE'})
+            .then(() => {
+                const updatedQuestions = savedQuestions.filter((question: Question) => question.id !== id);
+                setSavedQuestions(updatedQuestions);
+            });
+    };
+
 
     useEffect(() => {
         getSavedQuestions()

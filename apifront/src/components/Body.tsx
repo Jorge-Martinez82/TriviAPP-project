@@ -8,7 +8,7 @@ const Body = () => {
 
     const[showAnswer, setShowAnswer] = useState(false)
     const getQuestions = () => {
-        fetch('http://localhost:8080/api/questions/?category='+category,
+        fetch('http://localhost:8090/api/questions/?category='+category,
             {
                 method:'GET',
                 headers:{
@@ -21,7 +21,7 @@ const Body = () => {
             )
     }
     const saveQuestion = () => {
-        fetch('http://localhost:8080/api/questions/saved', {
+        fetch('http://localhost:8090/api/questions/saved', {
             method : 'POST',
             headers: {'Content-Type': 'application/json'},
             body : JSON.stringify(questions)

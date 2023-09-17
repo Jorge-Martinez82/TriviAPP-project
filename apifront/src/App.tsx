@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {Routes, Route, Router, Link} from "react-router-dom";
+import React from 'react';
 import './App.css';
+import {Routes, Route} from "react-router-dom";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import About from "./components/About";
