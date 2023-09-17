@@ -4,10 +4,11 @@ import React, {useEffect, useState} from 'react'
 const Body = () => {
     const [category, setCategory] = useState("")
 
-    const [questions, setQuestions] = useState<any>("");
+    const [questions, setQuestions] = useState({ question: '', answer: '' });
 
     const[showAnswer, setShowAnswer] = useState(false)
     const getQuestions = () => {
+        if(category)
         fetch('http://localhost:8090/api/questions/?category='+category,
             {
                 method:'GET',
@@ -30,7 +31,7 @@ const Body = () => {
 
     useEffect(() => {
         getQuestions()
-    }, []);
+    }, [category]);
 
     function nextQuestion() {
         setShowAnswer(false)
@@ -39,6 +40,7 @@ const Body = () => {
 
     function selectCategory(event: any) {
         setCategory(event.target.value);
+        setShowAnswer(false)
     }
 
     const answer = (e:any) => {
@@ -50,6 +52,7 @@ const Body = () => {
         <div className={"body"}>
             <div className="select">
                 <select  onChange={selectCategory}>
+                    <option value="" selected disabled hidden>Select category</option>
                     <option value="artliterature">Art/Literature</option>
                     <option value="language">Language</option>
                     <option value="sciencenature">Science/Nature</option>
@@ -72,11 +75,13 @@ const Body = () => {
                 <p>{questions?.question}</p>
                 <div>
                     <button className="body__button" onClick={answer}>Answer</button>
+                    <button className="body__button" onClick={nextQuestion}>Next</button>
                     {showAnswer && <p>{questions?.answer}</p>}
+
                 </div>
             </div>
             <div className="div__button">
-                <button className="body__button" onClick={nextQuestion}>Next</button>
+
                 <button className="body__button" onClick={saveQuestion}>Save</button>
             </div>
         </div>
