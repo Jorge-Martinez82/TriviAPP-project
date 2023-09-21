@@ -7,7 +7,7 @@ const Body = () => {
     const[showAnswer, setShowAnswer] = useState(false)
     const [savingMessage, setSavingMessage] = useState('');
     const [isSaving, setIsSaving] = useState(false);
-    const [saveButtonText, setSaveButtonText] = useState('Save');
+
 
 
     const getQuestions = () => {
@@ -23,6 +23,8 @@ const Body = () => {
             .then((data) =>
                 setQuestions(data)
             )
+        setIsSaving(false)
+        setSavingMessage('');
     }
     const saveQuestion = () => {
         setIsSaving(true); // Desactivar el botón Save
@@ -35,9 +37,9 @@ const Body = () => {
             .then(() => {
                 // Guardado completado
                 setSavingMessage('Saving...'); // Mostrar el mensaje de guardado
-                setSaveButtonText('Saved');
                 setTimeout(() => {
-                    setSavingMessage(''); // Limpiar el mensaje después de unos segundos (opcional)
+                    setSavingMessage('Saved!!!'); // Limpiar el mensaje después de unos segundos (opcional)
+
                 }, 2000); // Cambia 2000 a la cantidad de milisegundos que desees
             })
 
@@ -49,6 +51,8 @@ const Body = () => {
     }, [category]);
 
     function nextQuestion() {
+
+
         setShowAnswer(false)
         getQuestions()
     }
@@ -102,7 +106,7 @@ const Body = () => {
                     onClick={saveQuestion}
                     disabled={isSaving} // Deshabilitar el botón cuando se esté guardando
                 >
-                    {saveButtonText}
+                    Save
                 </button>
                 {savingMessage && <p>{savingMessage}</p>} {/* Mostrar el mensaje de guardado */}
 
