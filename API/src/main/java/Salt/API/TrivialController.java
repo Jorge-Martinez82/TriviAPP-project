@@ -48,4 +48,10 @@ public class TrivialController {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("saved/all")
+    public ResponseEntity<Void> deleteAllSavedQuestions() {
+        service.deleteAllSavedQuestions();
+        return ResponseEntity.noContent().build();
+    }
 }

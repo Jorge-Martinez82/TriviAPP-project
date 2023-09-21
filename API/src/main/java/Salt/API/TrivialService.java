@@ -62,4 +62,8 @@ public class TrivialService {
 
         repo.deleteById(id);
     }
+
+    public void deleteAllSavedQuestions() {
+        repo.deleteAll();
+    }
 }

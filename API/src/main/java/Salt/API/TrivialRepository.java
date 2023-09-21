@@ -28,4 +28,6 @@ public class TrivialRepository implements ITrivialRepository{
     public void deleteById(Long id) {
         dao.deleteById(id);
     }
+    @Override
+    public void deleteAll(){dao.deleteAll();}
 }

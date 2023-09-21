@@ -8,4 +8,6 @@ public interface ITrivialRepository {
     void saveQuestion(Question question);
     List<Question> getAll();
     void deleteById(Long id);
+
+    void deleteAll();
 }
