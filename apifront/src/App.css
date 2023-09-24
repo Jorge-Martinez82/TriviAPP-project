@@ -1,11 +1,75 @@
 @media screen and (max-width: 480px) {
-    /* Estilos específicos para pantallas pequeñas */
-    .nav{
+    .header{
         display: none;
     }
+    .menu-button {
+        background: #7b7b7b;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
+        border-radius: 1em;
+    }
+
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px auto;
+        transition: 0.4s;
+    }
+
+    .title {
+        font-size: 2em;
+        text-align: center;
+        font-family: "Brush Script MT";
+    }
+
+    .App {
+        text-align: center;
+    }
+
+    .App-link {
+        color: #61dafb;
+    }
+
+    .nav {
+        font-family: "Arial";
+    }
+
+    a {
+        padding: 0.2em;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .menu_ham {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+    }
+    li {
+        padding: 0.2em;
+        margin: 0.5em;
+        background-color: #8d9ed3;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        display: inline-block;
+        box-shadow: 0px 0px 0px 5px #1a2679;
+        font-size: large;
+
+    }
+
 }
 
 @media screen and (min-width: 481px) {
+
+    .headerMobile {
+        display: none;
+    }
+
     .App {
         text-align: center;
     }
@@ -26,7 +90,7 @@
     .header {
         margin-left: 10em;
         margin-right: 10em;
-        margin-top: 2em;
+        margin-top: -2em;
         background-color: #ffffff;
         border-radius: 30px;
         box-shadow: 0px 0px 0px 5px #000000;
@@ -34,9 +98,8 @@
     }
 
     .title {
-        font-size: 5em;
+        font-size: 4em;
         font-family: "Brush Script MT";
-
     }
 
     .nav {
@@ -46,7 +109,7 @@
         justify-content: space-between;
         list-style-type: none;
         padding-bottom: 1em;
-        margin-top: -2.5em;
+        margin-top: -1em;
         font-family: "Arial";
     }
 
@@ -75,8 +138,9 @@
     }
 
     .body {
+        padding: 1em;
         width: 80%;
-        font-size: 2.5em;
+        font-size: 1.5em;
         border-radius: 30px;
         background-color: #ffffff;
         margin-top: 1em;
@@ -130,6 +194,8 @@
         text-align: center;
         box-shadow: 0px 0px 0px 5px #000000;
     }
+
+
 
     .mytriviapp {
         width: 80%;

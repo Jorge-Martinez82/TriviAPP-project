@@ -3,56 +3,52 @@ import React, {useEffect, useState} from 'react'
 
 const Body = () => {
     const [category, setCategory] = useState("")
-    const [questions, setQuestions] = useState({ question: '', answer: '' });
-    const[showAnswer, setShowAnswer] = useState(false)
+    const [questions, setQuestions] = useState({question: '', answer: ''});
+    const [showAnswer, setShowAnswer] = useState(false)
     const [savingMessage, setSavingMessage] = useState('');
     const [isSaving, setIsSaving] = useState(false);
 
 
-
     const getQuestions = () => {
-        if(category)
-        fetch('http://localhost:8090/api/questions/?category='+category,
-            {
-                method:'GET',
-                headers:{
-                'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
-                }})
-            .then((response) => response.json())
-            .then((data) =>
-                setQuestions(data)
-            )
+        if (category)
+            fetch('http://localhost:8090/api/questions/?category=' + category,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    }
+                })
+                .then((response) => response.json())
+                .then((data) =>
+                    setQuestions(data)
+                )
         setIsSaving(false)
         setSavingMessage('');
     }
     const saveQuestion = () => {
-        setIsSaving(true); // Desactivar el botón Save
+        setIsSaving(true);
 
         fetch('http://localhost:8090/api/questions/saved', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(questions),
         })
             .then(() => {
-                // Guardado completado
-                setSavingMessage('Saving...'); // Mostrar el mensaje de guardado
+                setSavingMessage('Saving...');
                 setTimeout(() => {
-                    setSavingMessage('Saved!!!'); // Limpiar el mensaje después de unos segundos (opcional)
+                    setSavingMessage('Saved!!!');
 
-                }, 2000); // Cambia 2000 a la cantidad de milisegundos que desees
+                }, 1500);
             })
 
     };
-
 
     useEffect(() => {
         getQuestions()
     }, [category]);
 
     function nextQuestion() {
-
-
         setShowAnswer(false)
         getQuestions()
     }
@@ -62,7 +58,7 @@ const Body = () => {
         setShowAnswer(false)
     }
 
-    const answer = (e:any) => {
+    const answer = (e: any) => {
         e.preventDefault();
         setShowAnswer(true)
     }
@@ -70,7 +66,7 @@ const Body = () => {
     return (
         <div className={"body"}>
             <div className="select">
-                <select  onChange={selectCategory}>
+                <select onChange={selectCategory}>
                     <option value="" selected disabled hidden>Select category</option>
                     <option value="artliterature">Art/Literature</option>
                     <option value="language">Language</option>
@@ -92,25 +88,25 @@ const Body = () => {
             </div>
             <div>
                 <p>{questions?.question}</p>
+                {questions?.question.length!==0 &&
                 <div>
                     <button className="body__button" onClick={answer}>Answer</button>
-                    <button className="body__button" onClick={nextQuestion}>Next</button>
                     {showAnswer && <p>{questions?.answer}</p>}
-
-                </div>
+                </div>}
             </div>
             <div className="div__button">
-
-                <button
-                    className="body__button"
-                    onClick={saveQuestion}
-                    disabled={isSaving} // Deshabilitar el botón cuando se esté guardando
-                >
-                    Save
-                </button>
-                {savingMessage && <p>{savingMessage}</p>} {/* Mostrar el mensaje de guardado */}
-
+                {questions?.question.length!==0 &&
+                    <>
+                        <button className="body__button" onClick={nextQuestion}>Next</button>
+                        <button
+                            className="body__button"
+                            onClick={saveQuestion}
+                            disabled={isSaving}
+                        >Save
+                        </button>
+                    </>}
             </div>
+            {savingMessage && <p>{savingMessage}</p>}
         </div>
     );
 

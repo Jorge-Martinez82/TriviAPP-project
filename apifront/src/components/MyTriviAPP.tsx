@@ -34,7 +34,6 @@ const MyTriviAPP = () => {
     }, []);
 
     const deleteAllSavedQuestions = () => {
-        // Realiza una solicitud para eliminar todas las preguntas guardadas
         fetch('http://localhost:8090/api/questions/saved/all', {
             method: 'DELETE',
         })
@@ -43,7 +42,7 @@ const MyTriviAPP = () => {
                 setSavedQuestions([]);
             })
             .catch((error) => {
-                console.error('Error al eliminar todas las preguntas guardadas:', error);
+                console.error('Error', error);
             });
     };
 
@@ -52,6 +51,7 @@ const MyTriviAPP = () => {
     return (
         <div className="mytriviapp">
             <div className="mytriviapp__content">
+                {savedQuestions.length ===0 && <p>No questions saved</p>}
                 {savedQuestions.map((saved: any) =>
                     <div className="saved" key={saved?.id}>
                     {saved?.question}
@@ -66,7 +66,7 @@ const MyTriviAPP = () => {
                     </div>)}
 
             </div>
-            <button className="remove-all__button" onClick={deleteAllSavedQuestions}>
+            <button className="remove__button" onClick={deleteAllSavedQuestions}>
                 Remove All
             </button>
 
