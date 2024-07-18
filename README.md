@@ -1,6 +1,8 @@
 # SaltAPIproject
-This application is a one-day project I made for presenting in the "Hack Day".
-We had one day to make the frontend, the backend and the database:
+This application is a one-day project I made for presenting in the "Hack Day" of Salt Bootcamp.
+We had one day to make the frontend, the backend and the database. The application uses an external API to
+show, save, and delete questions and aswers as a trivial-like game.
+Tech stack:
    - Frontend: React.js
    - Backend: Java Spring Boot
    - DataBase: PostgreSQL
