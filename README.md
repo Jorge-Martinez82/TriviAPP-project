@@ -12,7 +12,7 @@ It has the basic functionality of the design:
 ![app](https://user-images.githubusercontent.com/118907308/225281947-b3d32a6e-9303-4f74-8ac8-aa6bcd982463.png)
 
   ![image](https://github.com/user-attachments/assets/1d863d8e-1e32-488e-850f-d03765ea6688)
-  ![image](https://github.com/user-attachments/assets/57fe8dd0-5e78-4dfc-8844-c0681b313b4e)
+  ![image](https://github.com/user-attachments/assets/87fa619f-8b3e-4c39-9a20-6b8b589110c4)
   ![image](https://github.com/user-attachments/assets/46d39a9f-e6ee-4d1e-b416-ac21d8c8b6fa)
 
 But there are more functionality to add in the future versions. Some of them are:
