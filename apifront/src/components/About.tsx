@@ -3,8 +3,7 @@ import React from 'react'
 const About = () => {
     return (
 
-        <div className="about">
-            <div className="aboutcontent">
+        <div className="body">
                 <p>Frontend: React.js</p>
                 <p>Backend: Java Spring Boot</p>
                 <p>DataBase: PostgreSQL</p>
@@ -19,7 +18,6 @@ const About = () => {
                 <p>     -Save the wrong answers automatically</p>
                 <p>     -Mobile version</p>
 
-            </div>
         </div>
     );
 

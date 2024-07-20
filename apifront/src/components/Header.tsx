@@ -13,24 +13,23 @@ const Header = () => {
     return (
         <>
             <div className="header">
-                <div>
                     <h1 className="title">&lt;/TriviAPP&gt;</h1>
                     <nav className="nav">
 
                         <li>
-                            <Link className="link" to="/">Home</Link>{" "}
+                            <Link to="/">Home</Link>{" "}
                         </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
+
                         <li>
                             <Link to="/Body">TriviAPP</Link>
                         </li>
                         <li>
                             <Link to="/mytriviapp">MyTriviAPP</Link>
                         </li>
+                        <li>
+                            <Link to="/about">About</Link>
+                        </li>
                     </nav>
-                </div>
 
             </div>
             <div className="headerMobile">
