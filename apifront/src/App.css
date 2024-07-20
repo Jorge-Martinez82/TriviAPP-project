@@ -163,6 +163,7 @@
         font-family: Arial;
         font-size: 19px;
         padding: 5px 30px;
+        margin: 10px;
         text-decoration: none;
         text-shadow: 0px 1px 0px #283966;
     }
@@ -179,7 +180,7 @@
 
     .div__button {
         display: flex;
-        justify-content: space-around;
+        justify-content: end;
     }
 
     .aboutcontent {
